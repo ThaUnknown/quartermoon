@@ -1,4 +1,6 @@
-# Halfmoon development branch
+*This is the main branch of the repo, which contains the latest stable release. For the ongoing development, see the [develop branch](https://github.com/halfmoonui/halfmoon/tree/develop).*
+
+# [Halfmoon](https://www.gethalfmoon.com)
 
 > This is the development branch for the Halfmoon framework, which contains the latest changes and updates. For the last stable release, see the [main branch](https://github.com/halfmoonui/halfmoon/) of the repo.
 
