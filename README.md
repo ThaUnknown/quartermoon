@@ -48,7 +48,7 @@ The only files that will be worked on are `quartermoon-variables.css` and `quart
 - [x] *Focus visible state now supported for all types of links*
 - [ ] Update buttons (and inputs) to use padding, instead of fixed height (this should fix browser discrepancies in the appearance of buttons)
 - [ ] Fix the issue that causes the sidebar and overlay to appear for a moment before disappearing during page load on small screens (i.e. mobile phones)
-- [ ] Fix the `position` styles on the `<html>`, `<body>` and other major containers (this should fix some minor scroll issues)
+- [x] Fix the `position` styles on the `<html>`, `<body>` and other major containers (this should fix some minor scroll issues)
 - [ ] Scroll shadow utilities
 
 The above list is missing a few other tiny bugs and issues that will be fixed.
