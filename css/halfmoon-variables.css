@@ -3300,13 +3300,15 @@ html {
 /* DOM body */
 
 body {
-    background-color: var(--lm-base-body-bg-color);
-    background-image: var(--lm-base-body-bg-image);
-    color: var(--lm-base-text-color);
     font-size: var(--base-font-size);
     line-height: var(--base-line-height);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 400;
+}
+html {
+    background-color: var(--lm-base-body-bg-color);
+    background-image: var(--lm-base-body-bg-image);
+    color: var(--lm-base-text-color);
 }
 .dark-mode {
     background-color: var(--dm-base-body-bg-color);
@@ -3381,7 +3383,7 @@ Notes:
     ~ Any scrollbars on the body itself is not affected. This is because the 
     page-wrapper is always expected, as the entire framework is built around 
     it.
-    ~ Only styled on screens larger than 768px, because mobiles and tablets 
+    ~ Only styled on pointer: fine, because mobiles and tablets 
     have disappearing scrollbars, which look great most of the time.
     ~ The webkit scrollbars work on webkit based browsers, such as Chrome, 
     Safari, Brave, and the new Microsoft Edge.
@@ -3390,7 +3392,7 @@ Notes:
 -------------------------------------------------------------------------------
 */
 
-@media (min-width: 769px) {
+@media (pointer: fine) {
     /* Base scrollbar */
 
     .with-custom-webkit-scrollbars *::-webkit-scrollbar {
@@ -3701,21 +3703,17 @@ Notes:
 
 html,
 body {
-    position: absolute;
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    left: 0;
-    top: 0;
 }
 
 /* Page wrapper */
 
 .page-wrapper {
-    position: absolute;
-    height: 100%;
     width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -3824,11 +3822,7 @@ body {
 /* Content wrapper */
 
 .content-wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
     width: 100%;
     overflow: auto;
 }
@@ -15399,12 +15393,15 @@ body:not(.dark-mode) .text-danger-dim-lm,
 }
 .overflow-scroll {
     overflow: scroll !important;
+    will-change: transform;
 }
 .overflow-x-scroll {
     overflow-x: scroll !important;
+    will-change: transform;
 }
 .overflow-y-scroll {
     overflow-y: scroll !important;
+    will-change: transform;
 }
 @media (min-width: 577px) {
     .overflow-sm-hidden {

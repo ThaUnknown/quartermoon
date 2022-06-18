@@ -127,12 +127,12 @@ var halfmoon = {
 
     // Toggle light/dark mode 
     toggleDarkMode: function() {
-        if (document.body.classList.contains("dark-mode")) {
-            document.body.classList.remove("dark-mode");
+        if (document.bodocumentElementdy.classList.contains("dark-mode")) {
+            document.documentElement.classList.remove("dark-mode");
             halfmoon.darkModeOn = false;
             halfmoon.createCookie("halfmoon_preferredMode", "light-mode", 365);
         } else {
-            document.body.classList.add("dark-mode");
+            document.documentElement.classList.add("dark-mode");
             halfmoon.darkModeOn = true;
             halfmoon.createCookie("halfmoon_preferredMode", "dark-mode", 365);
         }
@@ -333,7 +333,7 @@ function halfmoonOnDOMContentLoaded() {
             halfmoon.darkModeOn = true;
         } else {
             // 3. If all else fails, re-initialize the dark mode preference depending on the .dark-mode class
-            if (document.body.classList.contains("dark-mode")) {
+            if (document.documentElement.classList.contains("dark-mode")) {
                 halfmoon.darkModeOn = true;
             } else {
                 halfmoon.darkModeOn = false;
@@ -343,14 +343,14 @@ function halfmoonOnDOMContentLoaded() {
 
     // Automatically set preferred theme
     // But only if one of the data-attribute is provided
-    if (document.body.getAttribute("data-set-preferred-mode-onload") || document.body.getAttribute("data-set-preferred-theme-onload")) {
+    if (document.documentElement.getAttribute("data-set-preferred-mode-onload") || document.documentElement.getAttribute("data-set-preferred-theme-onload")) {
         if (halfmoon.darkModeOn) {
-            if (!document.body.classList.contains("dark-mode")) {
-                document.body.classList.add("dark-mode");
+            if (!document.documentElement.classList.contains("dark-mode")) {
+                document.documentElement.classList.add("dark-mode");
             }
         } else {
-            if (document.body.classList.contains("dark-mode")) {
-                document.body.classList.remove("dark-mode");
+            if (document.documentElement.classList.contains("dark-mode")) {
+                document.documentElement.classList.remove("dark-mode");
             }
         }
     }
