@@ -1,17 +1,17 @@
 /*
 * -----------------------------------------------------------------------------
-* Halfmoon JS
+* Quartermoon JS
 * Version: Dev
-* https://www.gethalfmoon.com
-* Copyright, Halfmoon UI
-* Licensed under MIT (https://www.gethalfmoon.com/license)
+* https://www.getquartermoon.com
+* Copyright, Quartermoon UI
+* Licensed under MIT (https://www.getquartermoon.com/license)
 * -----------------------------------------------------------------------------
 * The above notice must be included in its entirety when this file is used.
 */
 
 // Namespaced function to check whether a selector is supported by the browser or not
 // Original is by Diego Perini, lifted from https://gist.github.com/paulirish/441842
-function halfmoon_selectorSupported(selector) {
+function quartermoon_selectorSupported(selector) {
     var support, link, sheet, doc = document,
         root = doc.documentElement,
         head = root.getElementsByTagName("head")[0],
@@ -73,16 +73,16 @@ if (!Element.prototype.closest) {
 
 // Polyfill for :focus-visible (https://github.com/WICG/focus-visible)
 // Only applied if the selector is not supported by the browser natively
-if (!halfmoon_selectorSupported(":focus-visible")) {
+if (!quartermoon_selectorSupported(":focus-visible")) {
     !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t():"function"==typeof define&&define.amd?define(t):t()}(0,function(){"use strict";function e(e){var t=!0,n=!1,o=null,d={text:!0,search:!0,url:!0,tel:!0,email:!0,password:!0,number:!0,date:!0,month:!0,week:!0,time:!0,datetime:!0,"datetime-local":!0};function i(e){return!!(e&&e!==document&&"HTML"!==e.nodeName&&"BODY"!==e.nodeName&&"classList"in e&&"contains"in e.classList)}function s(e){e.classList.contains("focus-visible")||(e.classList.add("focus-visible"),e.setAttribute("data-focus-visible-added",""))}function u(e){t=!1}function a(){document.addEventListener("mousemove",c),document.addEventListener("mousedown",c),document.addEventListener("mouseup",c),document.addEventListener("pointermove",c),document.addEventListener("pointerdown",c),document.addEventListener("pointerup",c),document.addEventListener("touchmove",c),document.addEventListener("touchstart",c),document.addEventListener("touchend",c)}function c(e){e.target.nodeName&&"html"===e.target.nodeName.toLowerCase()||(t=!1,document.removeEventListener("mousemove",c),document.removeEventListener("mousedown",c),document.removeEventListener("mouseup",c),document.removeEventListener("pointermove",c),document.removeEventListener("pointerdown",c),document.removeEventListener("pointerup",c),document.removeEventListener("touchmove",c),document.removeEventListener("touchstart",c),document.removeEventListener("touchend",c))}document.addEventListener("keydown",function(n){n.metaKey||n.altKey||n.ctrlKey||(i(e.activeElement)&&s(e.activeElement),t=!0)},!0),document.addEventListener("mousedown",u,!0),document.addEventListener("pointerdown",u,!0),document.addEventListener("touchstart",u,!0),document.addEventListener("visibilitychange",function(e){"hidden"===document.visibilityState&&(n&&(t=!0),a())},!0),a(),e.addEventListener("focus",function(e){var n,o,u;i(e.target)&&(t||(n=e.target,o=n.type,"INPUT"===(u=n.tagName)&&d[o]&&!n.readOnly||"TEXTAREA"===u&&!n.readOnly||n.isContentEditable))&&s(e.target)},!0),e.addEventListener("blur",function(e){var t;i(e.target)&&(e.target.classList.contains("focus-visible")||e.target.hasAttribute("data-focus-visible-added"))&&(n=!0,window.clearTimeout(o),o=window.setTimeout(function(){n=!1},100),(t=e.target).hasAttribute("data-focus-visible-added")&&(t.classList.remove("focus-visible"),t.removeAttribute("data-focus-visible-added")))},!0),e.nodeType===Node.DOCUMENT_FRAGMENT_NODE&&e.host?e.host.setAttribute("data-js-focus-visible",""):e.nodeType===Node.DOCUMENT_NODE&&(document.documentElement.classList.add("js-focus-visible"),document.documentElement.setAttribute("data-js-focus-visible",""))}if("undefined"!=typeof window&&"undefined"!=typeof document){var t;window.applyFocusVisiblePolyfill=e;try{t=new CustomEvent("focus-visible-polyfill-ready")}catch(e){(t=document.createEvent("CustomEvent")).initCustomEvent("focus-visible-polyfill-ready",!1,!1,{})}window.dispatchEvent(t)}"undefined"!=typeof document&&e(document)});
 }
 
 /* End polyfills */
 
 
-/* Halfmoon JS core */
+/* Quartermoon JS core */
 
-var halfmoon = {
+var quartermoon = {
     // Getting the required elements
     // Re-initialized once the DOM is loaded (to avoid issues with virtual DOM)
     pageWrapper: document.getElementsByClassName("page-wrapper")[0],
@@ -122,26 +122,26 @@ var halfmoon = {
 
     // Erase cookie
     eraseCookie: function(name) {
-        halfmoon.createCookie(name, "", -1);
+        quartermoon.createCookie(name, "", -1);
     },
 
     // Toggle light/dark mode 
     toggleDarkMode: function() {
         if (document.bodocumentElementdy.classList.contains("dark-mode")) {
             document.documentElement.classList.remove("dark-mode");
-            halfmoon.darkModeOn = false;
-            halfmoon.createCookie("halfmoon_preferredMode", "light-mode", 365);
+            quartermoon.darkModeOn = false;
+            quartermoon.createCookie("quartermoon_preferredMode", "light-mode", 365);
         } else {
             document.documentElement.classList.add("dark-mode");
-            halfmoon.darkModeOn = true;
-            halfmoon.createCookie("halfmoon_preferredMode", "dark-mode", 365);
+            quartermoon.darkModeOn = true;
+            quartermoon.createCookie("quartermoon_preferredMode", "dark-mode", 365);
         }
     },
 
     // Get preferred mode
     getPreferredMode: function() {
-        if (halfmoon.readCookie("halfmoon_preferredMode")) {
-            return halfmoon.readCookie("halfmoon_preferredMode");
+        if (quartermoon.readCookie("quartermoon_preferredMode")) {
+            return quartermoon.readCookie("quartermoon_preferredMode");
         } else {
             return "not-set";
         }
@@ -149,11 +149,11 @@ var halfmoon = {
 
     // Toggles sidebar
     toggleSidebar: function() {
-        if (halfmoon.pageWrapper) {
-            if (halfmoon.pageWrapper.getAttribute("data-sidebar-hidden")) {
-                halfmoon.pageWrapper.removeAttribute("data-sidebar-hidden");
+        if (quartermoon.pageWrapper) {
+            if (quartermoon.pageWrapper.getAttribute("data-sidebar-hidden")) {
+                quartermoon.pageWrapper.removeAttribute("data-sidebar-hidden");
             } else {
-                halfmoon.pageWrapper.setAttribute("data-sidebar-hidden", "hidden");
+                quartermoon.pageWrapper.setAttribute("data-sidebar-hidden", "hidden");
             }
         }
     },
@@ -243,7 +243,7 @@ var halfmoon = {
         var alertElement = document.createElement("div");
 
         // Set ID to the alert element
-        alertElement.setAttribute("id", halfmoon.makeId(6));
+        alertElement.setAttribute("id", quartermoon.makeId(6));
 
         // Add the title
         if (title) {
@@ -268,10 +268,10 @@ var halfmoon = {
         alertElement.innerHTML = content;
 
         // Append the alert element to the sticky alerts
-        halfmoon.stickyAlerts.insertBefore(alertElement, halfmoon.stickyAlerts.childNodes[0]);
+        quartermoon.stickyAlerts.insertBefore(alertElement, quartermoon.stickyAlerts.childNodes[0]);
 
         // Toast the alert
-        halfmoon.toastAlert(alertElement.getAttribute("id"), timeShown);
+        quartermoon.toastAlert(alertElement.getAttribute("id"), timeShown);
     },
 
     /* End code block for handling sticky alerts */
@@ -303,40 +303,40 @@ var halfmoon = {
 
     // For attaching the bind input value function (meant to be called when an event listener is attached)
     callBindInputValueForAttachment: function(event) {
-        halfmoon.bindInputValue(event.target);
+        quartermoon.bindInputValue(event.target);
     },
 }
 
 
 /* Things done once the DOM is loaded */
 
-function halfmoonOnDOMContentLoaded() {
+function quartermoonOnDOMContentLoaded() {
     // Re-initializing the required elements (to avoid issues with virtual DOM)
-    if (!halfmoon.pageWrapper) {
-        halfmoon.pageWrapper = document.getElementsByClassName("page-wrapper")[0];
+    if (!quartermoon.pageWrapper) {
+        quartermoon.pageWrapper = document.getElementsByClassName("page-wrapper")[0];
     }
-    if (!halfmoon.stickyAlerts) {
-        halfmoon.stickyAlerts = document.getElementsByClassName("sticky-alerts")[0];
+    if (!quartermoon.stickyAlerts) {
+        quartermoon.stickyAlerts = document.getElementsByClassName("sticky-alerts")[0];
     }
 
     // Handle the cookie and variable for dark mode
     // 1. First preference is given to the cookie if it exists
-    if (halfmoon.readCookie("halfmoon_preferredMode")) {
-        if (halfmoon.readCookie("halfmoon_preferredMode") == "dark-mode") {
-            halfmoon.darkModeOn = true;
+    if (quartermoon.readCookie("quartermoon_preferredMode")) {
+        if (quartermoon.readCookie("quartermoon_preferredMode") == "dark-mode") {
+            quartermoon.darkModeOn = true;
         } else {
-            halfmoon.darkModeOn = false;
+            quartermoon.darkModeOn = false;
         }
     } else {
         // 2. If cookie does not exist, next preference is for the dark mode setting
         if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            halfmoon.darkModeOn = true;
+            quartermoon.darkModeOn = true;
         } else {
             // 3. If all else fails, re-initialize the dark mode preference depending on the .dark-mode class
             if (document.documentElement.classList.contains("dark-mode")) {
-                halfmoon.darkModeOn = true;
+                quartermoon.darkModeOn = true;
             } else {
-                halfmoon.darkModeOn = false;
+                quartermoon.darkModeOn = false;
             }
         }
     }
@@ -344,7 +344,7 @@ function halfmoonOnDOMContentLoaded() {
     // Automatically set preferred theme
     // But only if one of the data-attribute is provided
     if (document.documentElement.getAttribute("data-set-preferred-mode-onload") || document.documentElement.getAttribute("data-set-preferred-theme-onload")) {
-        if (halfmoon.darkModeOn) {
+        if (quartermoon.darkModeOn) {
             if (!document.documentElement.classList.contains("dark-mode")) {
                 document.documentElement.classList.add("dark-mode");
             }
@@ -358,15 +358,15 @@ function halfmoonOnDOMContentLoaded() {
     // Hiding sidebar on first load on small screens (unless data-attribute provided)
     // Or on larger screens when sidebar type is overlayed-all
     if (document.documentElement.clientWidth <= 768) {
-        if (halfmoon.pageWrapper) {
-            if (!halfmoon.pageWrapper.getAttribute("data-show-sidebar-onload-sm-and-down")) {
-                halfmoon.pageWrapper.setAttribute("data-sidebar-hidden", "hidden");
+        if (quartermoon.pageWrapper) {
+            if (!quartermoon.pageWrapper.getAttribute("data-show-sidebar-onload-sm-and-down")) {
+                quartermoon.pageWrapper.setAttribute("data-sidebar-hidden", "hidden");
             }
         }
     } else {
-        if (halfmoon.pageWrapper) {
-            if (halfmoon.pageWrapper.getAttribute("data-sidebar-type") === "overlayed-all") {
-                halfmoon.pageWrapper.setAttribute("data-sidebar-hidden", "hidden");
+        if (quartermoon.pageWrapper) {
+            if (quartermoon.pageWrapper.getAttribute("data-sidebar-type") === "overlayed-all") {
+                quartermoon.pageWrapper.setAttribute("data-sidebar-hidden", "hidden");
             }
         }
     }
@@ -387,13 +387,13 @@ function halfmoonOnDOMContentLoaded() {
                     target.classList.remove("active");
                     target.closest(".dropdown").classList.remove("show");
                 } else {
-                    halfmoon.deactivateAllDropdownToggles();
+                    quartermoon.deactivateAllDropdownToggles();
                     target.classList.add("active");
                     target.closest(".dropdown").classList.add("show");
                 }
             } else {
                 if (!target.matches(".dropdown-menu *")) {
-                    halfmoon.deactivateAllDropdownToggles();
+                    quartermoon.deactivateAllDropdownToggles();
                 }
             }
 
@@ -413,7 +413,7 @@ function halfmoonOnDOMContentLoaded() {
                 var targetModal = document.getElementById(target.getAttribute("data-target"));
                 if (targetModal) {
                     if (targetModal.classList.contains("modal")) {
-                        halfmoon.toggleModal(target.getAttribute("data-target"));
+                        quartermoon.toggleModal(target.getAttribute("data-target"));
                     }
                 }
             }
@@ -509,7 +509,7 @@ function halfmoonOnDOMContentLoaded() {
             }
 
             // Call the click handler method to handle any logic set by the user in their projects to handle clicks
-            halfmoon.clickHandler(eventCopy);
+            quartermoon.clickHandler(eventCopy);
         }, 
         false
     );
@@ -550,7 +550,7 @@ function halfmoonOnDOMContentLoaded() {
 
                             // This shortcut works only if no modal is open
                             if (!modalOpen) {
-                                halfmoon.toggleSidebar();
+                                quartermoon.toggleSidebar();
                                 event.preventDefault();
                             }
                         }
@@ -559,7 +559,7 @@ function halfmoonOnDOMContentLoaded() {
                     // Toggle dark mode when [shift] + [D] keys are pressed
                     if (document.body.getAttribute("data-dm-shortcut-enabled")) {
                         if (event.shiftKey && event.which == 68) {
-                            halfmoon.toggleDarkMode();
+                            quartermoon.toggleDarkMode();
                             event.preventDefault();
                         }
                     }
@@ -603,14 +603,14 @@ function halfmoonOnDOMContentLoaded() {
             }
 
             // Call the keydown handler method to handle any logic set by the user in their projects to handle keydown events
-            halfmoon.keydownHandler(eventCopy);
+            quartermoon.keydownHandler(eventCopy);
         }
     );
 
     // Handling custom file inputs
-    var halfmoonCustomFileInputs = document.querySelectorAll(".custom-file input");
-    for (var i = 0; i < halfmoonCustomFileInputs.length; i++) {
-        var customFile = halfmoonCustomFileInputs[i];
+    var quartermoonCustomFileInputs = document.querySelectorAll(".custom-file input");
+    for (var i = 0; i < quartermoonCustomFileInputs.length; i++) {
+        var customFile = quartermoonCustomFileInputs[i];
         // Create file name container element, add the class name, and set default value
         // Append it to the custom file element
         var fileNamesContainer = document.createElement("div");
@@ -644,23 +644,23 @@ function halfmoonOnDOMContentLoaded() {
     // Only for elements with the attribute
     // The double event listener is for cross-browser compatibility
     // Mainly, IE does not register the input event, so change must be used
-    var halfmoonElemsBindValue = document.querySelectorAll("[data-bind-value]");
-    for (var i = 0; i < halfmoonElemsBindValue.length; i++) {
-        halfmoon.bindInputValue(halfmoonElemsBindValue[i]);
-        halfmoonElemsBindValue[i].addEventListener(
-            "input", halfmoon.callBindInputValueForAttachment, false
+    var quartermoonElemsBindValue = document.querySelectorAll("[data-bind-value]");
+    for (var i = 0; i < quartermoonElemsBindValue.length; i++) {
+        quartermoon.bindInputValue(quartermoonElemsBindValue[i]);
+        quartermoonElemsBindValue[i].addEventListener(
+            "input", quartermoon.callBindInputValueForAttachment, false
         );
-        halfmoonElemsBindValue[i].addEventListener(
-            "change", halfmoon.callBindInputValueForAttachment, false
+        quartermoonElemsBindValue[i].addEventListener(
+            "change", quartermoon.callBindInputValueForAttachment, false
         );
     }
 
     // Adding the .with-transitions class to the page-wrapper so that transitions are enabled
     // This way, the weird bug on Chrome is avoided, where the transitions run on load
-    if (halfmoon.pageWrapper) {
-        halfmoon.pageWrapper.classList.add("with-transitions");
+    if (quartermoon.pageWrapper) {
+        quartermoon.pageWrapper.classList.add("with-transitions");
     }
 }
 
 // Call the function when the DOM is loaded
-document.addEventListener("DOMContentLoaded", halfmoonOnDOMContentLoaded);
+document.addEventListener("DOMContentLoaded", quartermoonOnDOMContentLoaded);

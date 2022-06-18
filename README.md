@@ -1,10 +1,10 @@
-*This is the main branch of the repo, which contains the latest stable release. For the ongoing development, see the [develop branch](https://github.com/halfmoonui/halfmoon/tree/develop).*
+*This is a fork of halfmoon, which is meant to stay true to the original, while fixing issues.*
 
-# [Halfmoon](https://www.gethalfmoon.com)
+# [Quartermoon](https://www.gethalfmoon.com)
 
-> This is the development branch for the Halfmoon framework, which contains the latest changes and updates. For the last stable release, see the [main branch](https://github.com/halfmoonui/halfmoon/) of the repo.
+> This is the development branch for the Quartermoon framework, which contains the latest changes and updates. For the last stable release, see the [main branch](https://github.com/thaunknown/quartermoon/) of the repo.
 
-The only files that will be worked on are `halfmoon-variables.css` and `halfmoon.js`. Once they are ready for a new release, the other files will be generated (i.e. minified and variables flattened), and then this branch will be merged with the main one. Not everything listed below will be worked on for the **next** major update (`v1.2.0`). Anything left out will be pushed to the update after that one.
+The only files that will be worked on are `quartermoon-variables.css` and `quartermoon.js`. Once they are ready for a new release, the other files will be generated (i.e. minified and variables flattened), and then this branch will be merged with the main one. Not everything listed below will be worked on for the **next** major update (`v1.2.0`). Anything left out will be pushed to the update after that one.
 
 **Please note**, writing and updating the official documentation website requires time and polish. So for the time being, as new components and features are being added, I will create examples illustrating how they can be used on Codepen. That should hopefully tie everything over until the official release and documentation update. You can find the links to the Codepens below, next to the list items.
 
@@ -14,7 +14,9 @@ The only files that will be worked on are `halfmoon-variables.css` and `halfmoon
 
 **UPDATE 6th February, 2021** Added styled lists (unordered and ordered).
 
-**UPDATE 3rd February, 2021** [Back from hiatus](https://gist.github.com/halfmoonui/59b464241dfe760449476d9edde6f0b6)! Range, number input, password show/hide toggles have been added.
+**UPDATE 3rd February, 2021** Back from hiatus! Range, number input, password show/hide toggles have been added.
+
+**UPDATE 18th June. 2022** Quartermoon start. Fixed scrolling performance issues, fixed sidebar performance issues. Fixed scroll event listeners not working, improved invalid forms and added an option to include multiple form elements of the same type inside a custom form element div.
 
 ## New features and components
 
@@ -26,7 +28,7 @@ The only files that will be worked on are `halfmoon-variables.css` and `halfmoon
 - [ ] Tabs (also called navs)
 - [ ] List group
 - [ ] Spinners
-- [ ] High contrast mode (issue https://github.com/halfmoonui/halfmoon/issues/27)
+- [ ] High contrast mode
 - [ ] User preferred scale
 - [ ] Date-time picker
 - [ ] Better select and multi-select
@@ -56,7 +58,7 @@ The above list is missing a few other tiny bugs and issues that will be fixed.
 - [ ] Pages for the new components and features
 - [ ] Accessibility improvements in the examples
 - [ ] Comparison pages with other popular frameworks
-- [ ] Pages for helping users integrate Halfmoon with React, Angular, Vue, and so on (as of right now, the documentation is sparse in this regard)
+- [ ] Pages for helping users integrate Quartermoon with React, Angular, Vue, and so on (as of right now, the documentation is sparse in this regard)
 
 ## Dropped changes (not doing)
 
