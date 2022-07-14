@@ -9595,7 +9595,6 @@ select.form-control[multiple] > option:disabled {
     display: none;
     width: var(--sticky-alert-width);
     margin-top: 1rem;
-    right: -50rem; /* Hidden by default */
     box-shadow: var(--sticky-alert-box-shadow);
 }
 .sticky-alerts .alert.show {

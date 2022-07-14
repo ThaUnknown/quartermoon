@@ -1,6 +1,6 @@
 {
   "name": "quartermoon",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Front-end framework with a built-in dark mode and full customizability using CSS variables; great for building dashboards and tools",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "css-variables",
     "css-custom-properties"
   ],
-  "author": "Quartermoon UI",
+  "author": "Quartermoon UI, ThaUnknown",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/thaunknown/quartermoon/issues"
