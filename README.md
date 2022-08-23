@@ -16,7 +16,9 @@ The only files that will be worked on are `quartermoon-variables.css` and `quart
 
 **UPDATE 3rd February, 2021** Back from hiatus! Range, number input, password show/hide toggles have been added.
 
-**UPDATE 18th June. 2022** Quartermoon start. Fixed scrolling performance issues, fixed sidebar performance issues. Fixed scroll event listeners not working, improved invalid forms and added an option to include multiple form elements of the same type inside a custom form element div.
+**UPDATE 18th June, 2022** Quartermoon start. Fixed scrolling performance issues, fixed sidebar performance issues. Fixed scroll event listeners not working, improved invalid forms and added an option to include multiple form elements of the same type inside a custom form element div.
+
+**UPDATE 23 August, 2022** Added display grid utilities. Added `img-cover` option.
 
 ## New features and components
 

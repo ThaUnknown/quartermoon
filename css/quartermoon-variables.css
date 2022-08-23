@@ -10936,6 +10936,9 @@ a.badge-group.focus-visible {
     max-width: 100%;
     height: auto;
 }
+.img-cover {
+    object-fit: cover;
+}
 
 
 /*
@@ -12965,6 +12968,9 @@ Notes:
 .d-inline-flex {
     display: inline-flex !important;
 }
+.d-grid {
+    display: grid !important
+}
 @media (min-width: 577px) {
     .d-sm-none {
         display: none !important;
@@ -12992,6 +12998,9 @@ Notes:
     }
     .d-sm-inline-flex {
         display: inline-flex !important;
+    }
+    .d-sm-grid {
+        display: grid !important
     }
 }
 @media (min-width: 769px) {
@@ -13022,6 +13031,9 @@ Notes:
     .d-md-inline-flex {
         display: inline-flex !important;
     }
+    .d-md-grid {
+        display: grid !important
+    }
 }
 @media (min-width: 993px) {
     .d-lg-none {
@@ -13051,6 +13063,9 @@ Notes:
     .d-lg-inline-flex {
         display: inline-flex !important;
     }
+    .d-lg-grid {
+        display: grid !important
+    }
 }
 @media (min-width: 1201px) {
     .d-xl-none {
@@ -13079,6 +13094,9 @@ Notes:
     }
     .d-xl-inline-flex {
         display: inline-flex !important;
+    }
+    .d-xl-grid {
+        display: grid !important
     }
 }
 @media (max-width: 576px) {

@@ -1,6 +1,6 @@
 {
   "name": "quartermoon",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "Front-end framework with a built-in dark mode and full customizability using CSS variables; great for building dashboards and tools",
   "main": "index.js",
   "scripts": {
