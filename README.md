@@ -2,8 +2,6 @@
 
 # [Quartermoon](https://www.gethalfmoon.com)
 
-> This is the development branch for the Quartermoon framework, which contains the latest changes and updates. For the last stable release, see the [main branch](https://github.com/thaunknown/quartermoon/) of the repo.
-
 The only files that will be worked on are `quartermoon-variables.css` and `quartermoon.js`. Once they are ready for a new release, the other files will be generated (i.e. minified and variables flattened), and then this branch will be merged with the main one. Not everything listed below will be worked on for the **next** major update (`v1.2.0`). Anything left out will be pushed to the update after that one.
 
 **Please note**, writing and updating the official documentation website requires time and polish. So for the time being, as new components and features are being added, I will create examples illustrating how they can be used on Codepen. That should hopefully tie everything over until the official release and documentation update. You can find the links to the Codepens below, next to the list items.
